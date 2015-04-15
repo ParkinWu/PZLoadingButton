@@ -32,7 +32,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        NSLog(@"asdfasdfaf");
         [self commentInit];
         [self setupConstrains];
         
@@ -50,12 +49,12 @@
     }
     return self;
 }
-- (void)commentInit {
-    self.indecator.hidden = YES;
-    self.indecator.userInteractionEnabled = NO;
-    self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    self.contentHorizontalAlignment =UIControlContentHorizontalAlignmentCenter;
-}
+    - (void)commentInit {
+        self.indecator.hidden = YES;
+        self.indecator.userInteractionEnabled = NO;
+        self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        self.contentHorizontalAlignment =UIControlContentHorizontalAlignmentCenter;
+    }
 - (UIActivityIndicatorView *)indecator {
     if (_indecator == nil) {
         self.indecator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -64,15 +63,15 @@
     }
     return _indecator;
 }
-- (void)setupConstrains {
-    
-    //X方向居中
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
-    //Y方向居中
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    //宽25
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:25]];
-    //高25
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:25]];
-}
+    - (void)setupConstrains {
+        
+        //X方向居中
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+        //Y方向居中
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+        //宽25
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:25]];
+        //高25
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:self.indecator attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:25]];
+    }
 @end
